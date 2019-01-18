@@ -1,0 +1,8 @@
+port: 3288
+
+logLevel: info
+
+# Server URL prefix
+# This is usually set behind a reverse proxy like Nginx
+# A leading slash is required, eg: /someprefix
+portalPrefix: /server

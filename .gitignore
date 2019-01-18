@@ -1,0 +1,36 @@
+2
+node_modules/
+
+# logs
+npm-debug.log
+yarn-error.log
+
+# Next build
+.next/
+
+# Nuxt generate
+out/
+
+# Git Stats
+git_stats/
+
+# Yarn offline packages
+yarn-offline/
+
+# css
+static/css/
+
+.eslintcache
+
+_output/
+uploads/
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+.DS_Store

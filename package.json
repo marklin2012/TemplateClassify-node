@@ -1,0 +1,43 @@
+{
+  "name": "templateclassify-node",
+  "version": "0.0.1",
+  "description": "a project use TensorFlowJS with node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --quiet --cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://marklin2012@github.com/marklin2012/TemplateClassify-node.git"
+  },
+  "keywords": [
+    "tensorflow",
+    "node",
+    "classify"
+  ],
+  "author": "MarkLin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marklin2012/TemplateClassify-node/issues"
+  },
+  "homepage": "https://github.com/marklin2012/TemplateClassify-node#readme",
+  "dependencies": {
+    "config": "^3.0.1",
+    "joi": "^14.3.1",
+    "js-yaml": "^3.12.1",
+    "koa": "^2.6.2",
+    "koa-joi-router": "^5.2.0",
+    "koa-joi-router-docs": "^0.1.9",
+    "lodash": "^4.17.11",
+    "pino": "^4.13.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-lodash": "^5.1.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9"
+  }
+}

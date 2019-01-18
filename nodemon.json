@@ -1,0 +1,5 @@
+{
+  "verbose": true,
+  "ignore": ["test/", "build/", "uploads/", "tmp/"],
+  "ext": "js json yml"
+}
