@@ -2,7 +2,6 @@ const request = require('request')
 const PNG = require('pngjs').PNG
 const JPEG = require('jpeg-js')
 const fs = require('fs')
-const tf = require('@tensorflow/tfjs')
 const { endsWith,  } = require('lodash')
 
 function handlePNG (stream, cb) {
@@ -42,24 +41,19 @@ function handleJPG (stream, cb) {
     })
 }
 
-function handleImageToRGBPixels(image) {
-  const numChannels = 3
-  const numPixels = image.width*image.height
-  const values = new Uint8Array(numPixels * numChannels)
-  for (let i = 0; i < numPixels; i++) {
-    for (let channel = 0; channel < numChannels; ++channel) {
-      values[i * numChannels + channel] = image.data[i * 4 + channel]
-    }
-  }
-  return tf.tensor3d(values, [image.width, image.height, numChannels])
-}
-
 let handleFunc = {
   jpg: handleJPG,
   jpeg: handleJPG,
   png: handlePNG,
 }
 
+/**
+ * 解析图片元数据  
+ * 
+ * @param {string} src 图片地址
+ * 
+ * @returns {Promise<object>} 图片元数据 { data: 图片 RGBA 元数据, width, heigh}
+ */
 function getPixels (src) {
   if (typeof src !== 'string') {
     throw new Error('src must be a string, but got: ', src)
@@ -68,7 +62,6 @@ function getPixels (src) {
   // 如果是 webp 的图片，则去掉 webp 后缀
   if (endsWith(path, '.webp')) {
     path = path.substr(0, path.lastIndexOf('.'))
-    console.log('path:', path)
   }
   let match = path.match(/\.([^.]+?)$/)
   let ext = (match && match[1] || '').toLowerCase()
@@ -100,7 +93,6 @@ function getPixels (src) {
     function func (stream) {
       handleFunc[ext](stream, (err, result) => {
         if (err) return reject(err)
-        const res = handleImageToRGBPixels(result)
         resolve(res)
       })
     }
