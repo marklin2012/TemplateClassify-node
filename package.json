@@ -24,14 +24,18 @@
   },
   "homepage": "https://github.com/marklin2012/TemplateClassify-node#readme",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.14.2",
+    "@tensorflow/tfjs-node": "^0.2.3",
     "config": "^3.0.1",
     "joi": "^14.3.1",
+    "jpeg-js": "^0.3.4",
     "js-yaml": "^3.12.1",
     "koa": "^2.6.2",
     "koa-joi-router": "^5.2.0",
     "koa-joi-router-docs": "^0.1.9",
     "lodash": "^4.17.11",
     "pino": "^4.13.0",
+    "pngjs": "^3.3.3",
     "request": "^2.88.0"
   },
   "devDependencies": {

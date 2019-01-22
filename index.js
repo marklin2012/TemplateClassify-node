@@ -3,6 +3,7 @@
  */
 const app = require('./lib/app')
 const config = require('./lib/config')
+require('@tensorflow/tfjs-node');
 
 app.listen(config.port, function () {
   console.log('\n----------------------------')
