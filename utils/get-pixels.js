@@ -93,7 +93,7 @@ function getPixels (src) {
     function func (stream) {
       handleFunc[ext](stream, (err, result) => {
         if (err) return reject(err)
-        resolve(res)
+        resolve(result)
       })
     }
   })
